@@ -71,6 +71,7 @@
         </v-card>
       </v-flex>
     </v-layout>
+    <!-- <ContractSelector v-if="new_contract"/> -->
   </v-container>
 </template>
 
@@ -79,9 +80,11 @@ import { mapState } from "vuex";
 import { mapMutations } from "vuex";
 export default {
   name: "PrincipalMenu",
+
   data() {
     return {
       select: null,
+      new_contract: true,
       menu_bar_option: [
         {
           id: "contrato",

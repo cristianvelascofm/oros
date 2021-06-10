@@ -30,8 +30,12 @@ export default {
 </script>
 
 <style>
+
+/* Quitar El scroll Automatico de Vuetify */
+ html { overflow-y: hidden !important; }
 #aplication,
 #pie {
+  
   background: rgb(215, 215, 241) 100%;
   background: linear-gradient(
     135deg,

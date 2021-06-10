@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <v-flex class="text-right">
-      <v-chip class="ma-2" outlined color="#023565" label text-color="#023565">
-        <v-icon left> mdi-account-circle-outline </v-icon>
+      <v-chip class="ma-2 mr-5" outlined color="#023565" label text-color="#023565">
+        <v-icon left> mdi-assistant </v-icon>
         {{ panel_active }}
       </v-chip>
     </v-flex>
@@ -13,6 +13,7 @@
       justify-center
       fill-height
       style="height: 450px"
+      id="container-form"
     >
       <v-flex>
         <v-form @submit.prevent="add" class="">
@@ -41,6 +42,7 @@
                 max-width="110"
                 class="mx-auto"
               >
+              <v-img src="../assets/img/avatar_profile.jpg" ></v-img>
               </v-sheet>
             </v-flex>
           </v-layout>
@@ -149,7 +151,8 @@
           ></v-select>
             </v-flex>
             <v-flex xs1 class="pt-3">
-              <v-btn color="#023565" elevation="5" fab dark small ><v-icon dark > mdi-office-building </v-icon></v-btn>
+              <Dependence/>
+              <!-- <v-btn color="#023565" elevation="5" fab dark small ><v-icon dark > mdi-office-building </v-icon></v-btn> -->
             </v-flex>
           </v-layout>
          
@@ -196,8 +199,12 @@
 
 <script>
 import { mapState, mapMutations } from "vuex";
+import Dependence from '../components/Dependence'
 export default {
   name: "Person",
+  components:{
+    Dependence,
+  },
   data() {
     return {
       date: null,
@@ -214,7 +221,15 @@ export default {
         },
         {
           id: "facned",
-          text: "FACNED - Facultad de Ciencias Exactas y de la Educación",
+          text: "FACENED - Facultad de Ciencias Exactas, Naturales y de la Educación",
+        },
+        {
+          id: 'facar',
+          text: 'FACAR - Facultad de Artes'
+        },
+        {
+          id: 'faca',
+          text: 'FACA - Facultad de Ciencias Agrarias'
         },
       ],
       state: [
@@ -278,4 +293,10 @@ export default {
 
 
 <style>
+/* Configuración Scroll Container */
+#container-form::-webkit-scrollbar {
+width: 0.0em;
+background: grey;
+display: inline !important;
+}
 </style>

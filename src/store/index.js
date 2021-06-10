@@ -10,6 +10,8 @@ export default new Vuex.Store({
     // El panel Derecho activo en el Main Oros
     panel_active: '', 
     stand_by: true,
+    type_user: 'root',
+    dialog_contract_selector: false,
   },
   mutations: {
     login(state){
@@ -17,7 +19,12 @@ export default new Vuex.Store({
     },
     formActive(state,active){
       state.panel_active = active
+      if(active == 'Nuevo Contrato'){
+        state.dialog_contract_selector = true
+        state.stand_by = true
+      }else{
       state.stand_by = false
+    }
     }
   },
   actions: {

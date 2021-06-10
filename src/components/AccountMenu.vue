@@ -14,8 +14,8 @@
         </v-btn>
       </template>
 
-      <v-card color="rgba(238, 217, 214, 1)" elevation="5">
-        <v-list color="rgba(238, 217, 214, .4)">
+      <v-card color="rgba(238, 217, 214, 1)" elevation="15">
+        <v-list color="rgba(238, 217, 214, 1)">
           <v-list-item>
             <v-list-item-avatar>
               <img :src="user_photo" alt="John" />

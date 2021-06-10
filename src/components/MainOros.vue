@@ -10,6 +10,8 @@
           <v-flex xs7 class="">
             <CompanyLogo v-if="stand_by"/>
              <Person v-if="! stand_by" />
+            
+
               
 
           </v-flex>
@@ -25,6 +27,7 @@
         </v-layout>
       </v-flex> -->
     </v-layout>
+    <ContractSelector/>
   </v-container>
 </template>
 
@@ -33,6 +36,8 @@
 import PrincipalMenu from "../components/PrincipalMenu";
 import CompanyLogo from "../components/CompanyLogo";
 import Person from "../components/Person";
+import ContractSelector from '../components/ContractSelector';
+
 import { mapState } from "vuex";
 export default {
   name: "MainOros",
@@ -40,6 +45,7 @@ export default {
     PrincipalMenu,
     CompanyLogo,
     Person,
+    ContractSelector
   },
   data() {
     return {};
