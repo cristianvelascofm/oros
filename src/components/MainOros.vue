@@ -6,28 +6,13 @@
           <v-flex xs5 class="">
             <PrincipalMenu />
           </v-flex>
-          
           <v-flex xs7 class="">
             <CompanyLogo v-if="stand_by"/>
-             <Person v-if="! stand_by" />
-            
-
-              
-
+            <TableList v-if="table_panel"/>
           </v-flex>
         </v-layout>
-
       </v-flex>
-      <!-- <v-flex xs7 class="">
-        <v-layout class="" fill-height style="height: 550px" align-center>
-          <v-flex class="">
-           
-            <Person />
-          </v-flex>
-        </v-layout>
-      </v-flex> -->
     </v-layout>
-    <ContractSelector/>
   </v-container>
 </template>
 
@@ -37,22 +22,24 @@ import PrincipalMenu from "../components/PrincipalMenu";
 import CompanyLogo from "../components/CompanyLogo";
 import Person from "../components/Person";
 import ContractSelector from '../components/ContractSelector';
-
+import TableList from '../components/TableList'
 import { mapState } from "vuex";
+
 export default {
   name: "MainOros",
   components: {
     PrincipalMenu,
     CompanyLogo,
     Person,
-    ContractSelector
+    ContractSelector,
+    TableList
   },
   data() {
     return {};
   },
 
   computed: {
-    ...mapState(["panel_active","stand_by"]),
+    ...mapState(["panel_active","stand_by","table_panel"]),
   },
 };
 </script>

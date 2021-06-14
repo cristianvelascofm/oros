@@ -40,23 +40,17 @@
             </v-list-item-icon>
   
             <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+              <v-list-item-title @click="accountMenu(item.title)">{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
-
-            <!-- <v-card-actions>
-            <v-spacer></v-spacer>
-
-            <v-btn text @click="menu = false"> Cancelar </v-btn>
-            
-            </v-card-actions> -->
       </v-card>
     </v-menu>
   </v-container>
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex";
 export default {
   name: "AccountMenu",
   data() {
@@ -71,6 +65,13 @@ export default {
       ],
     };
   },
+  methods:{
+    
+    ...mapMutations(['accountMenu'])
+    },
+    computed:{
+    // ...mapState([])  
+    }
 };
 </script>
 

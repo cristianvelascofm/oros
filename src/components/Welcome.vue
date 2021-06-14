@@ -1,13 +1,7 @@
 <template>
   <v-container>
-    <v-layout
-        class=""
-    fill-height
-    style="height: 200px"
-    justify-center
-    >
+    <v-layout class="" fill-height style="height: 200px" justify-center>
       <v-flex class="justify-center" xs-3>
-    
         <v-img
           class="shrink mx-auto"
           flex

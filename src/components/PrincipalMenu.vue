@@ -35,37 +35,16 @@
             class="justify-center"
           >
             <v-col class="col-6">
-              <v-menu right :offset-x="true">
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn
-                    color="#023565"
-                    block
-                    small
-                    dark
-                    elevation="10"
-                    v-bind="attrs"
-                    v-on="on"
-                    >{{ element.text }}</v-btn
-                  >
-                </template>
-                <v-list color="rgba(238, 217, 214, .4)">
-                  <v-list-item-group v-model="select" color="primary">
-                    <v-list-item
-                      v-for="(item, i) in element.opt"
-                      :value="item.id"
-                      :key="i"
-                      @click="formActive(item.text)"
-                    >
-                      <!-- {{ select }}  -->
-                      <v-list-item-content>
-                        <v-list-item-title
-                          v-text="item.text"
-                        ></v-list-item-title>
-                      </v-list-item-content>
-                    </v-list-item>
-                  </v-list-item-group>
-                </v-list>
-              </v-menu>
+              <v-btn
+                color="#023565"
+                block
+                small
+                dark
+                elevation="10"
+   
+                @click="formActive(element.text)"
+                >{{ element.text }}
+              </v-btn>
             </v-col>
           </v-row>
         </v-card>
@@ -84,7 +63,6 @@ export default {
   data() {
     return {
       select: null,
-      new_contract: true,
       menu_bar_option: [
         {
           id: "contrato",
@@ -227,15 +205,6 @@ export default {
   methods: {
     ...mapMutations(["formActive"]),
 
-    clk(rule) {
-      console.log(this.select);
-      var cosa = Object.assign({}, rule);
-      console.log(cosa);
-    },
-    cosa(a) {
-      console.log(a);
-      this.select = null;
-    },
   },
   mounted() {},
   computed: {
